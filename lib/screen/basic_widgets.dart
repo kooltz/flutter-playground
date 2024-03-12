@@ -47,9 +47,6 @@ class MyScaffold extends StatelessWidget {
               child: Text('Hello, World!'),
             ),
           ),
-          ElevatedButton(
-              onPressed: () => {Navigator.pop(context)},
-              child: const Text('Back'))
         ],
       ),
     );
@@ -59,13 +56,17 @@ class MyScaffold extends StatelessWidget {
 class BasicWidgets extends StatelessWidget {
   const BasicWidgets({super.key});
 
+  void back(context2) {}
+
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      title: 'My App',
-      home: SafeArea(
-        child: MyScaffold(),
-      ),
-    );
+    return Scaffold(
+        body: const SafeArea(
+          child: MyScaffold(),
+        ),
+        floatingActionButton: FloatingActionButton(
+          onPressed: () => {Navigator.pop(context)},
+          child: const Icon(Icons.arrow_back),
+        ));
   }
 }
