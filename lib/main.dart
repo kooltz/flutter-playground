@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'screen/hello_world.dart';
+import 'screen/basic_widgets.dart';
 
 void main() {
   runApp(const MyApp());
@@ -43,7 +44,15 @@ class HomePage extends StatelessWidget {
                             MaterialPageRoute<void>(
                                 builder: (context) => const HelloWorld()))
                       },
-                  child: const Text("Hello World"))
+                  child: const Text("Hello World")),
+              ElevatedButton(
+                  onPressed: () => {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute<void>(
+                                builder: (context) => const BasicWidgets()))
+                      },
+                  child: const Text("Basic Widgets"))
             ],
           ),
         ));
